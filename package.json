@@ -1,0 +1,13 @@
+{
+	"name": "financejs",
+	"version": "0.0.1",
+	"description": "Finance app to manage the personal budget",
+	"author": "Lydia Balazs <lydia.balazs@gmail.com>",
+	"scripts": {
+    	"start": "./bin/financejs"
+	},
+	"dependencies": {
+		"express": "3.4.4",
+		"ejs": "0.8.4"
+  }
+}
