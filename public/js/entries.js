@@ -20,18 +20,12 @@ $( document ).ready(function() {
 
 	// and return the data if ajax call was successful
 	promiseGet.success(function (data) {
-		var entries = new Array();
-		$.each(data, function( index, value ) {
-			entries[index] = JSON.stringify(data[index]);
-		});
-
 		// clear entries
 		table.html('');
 
 		// display entries
 		var totalSum = 0;
-		$.each(entries, function( index, value ) {
-			var entry = JSON.parse(value);
+		$.each(data, function( index, entry ) {
 			var cost = (entry.type == 'debit') ? +(entry.cost * -1) : +entry.cost;
 			totalSum += cost;
 			table.append('<tr><td>' + entry.name + ' ( ' + entry.tag + ', ' + entry.type + ' )</td><td>' + cost + ' EUR</td></tr>');
